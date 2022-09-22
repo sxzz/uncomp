@@ -1,5 +1,5 @@
 import { computed } from 'vue'
-import { getInstance } from '../../utils'
+import { useInstance } from '../../hooks'
 
 export const useButtonProps = {
   loading: Boolean,
@@ -10,7 +10,7 @@ export const useButtonProps = {
 }
 export const useButtonEmits = {}
 export const useButton = () => {
-  const { vm, props, emit, slots } = getInstance<
+  const { vm, props, emit, slots } = useInstance<
     typeof useButtonProps,
     typeof useButtonEmits
   >()

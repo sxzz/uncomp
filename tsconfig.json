@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ES2019", "DOM"],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "moduleResolution": "Node"
+  }
+}

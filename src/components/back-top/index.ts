@@ -1,6 +1,6 @@
 import { useEventListener, useThrottleFn } from '@vueuse/core'
 import { onMounted, ref, shallowRef } from 'vue'
-import { useInstance } from '../../utils'
+import { useInstance } from '../../hooks'
 
 export const backTopProps = {
   visibilityHeight: {
@@ -39,14 +39,13 @@ export const useBackTop = () => {
   const handleScroll = () => {
     if (el.value) visible.value = el.value.scrollTop >= props.visibilityHeight
   }
-  const handleScrollThrottled = useThrottleFn(handleScroll, 300)
 
   const handleClick = (event: MouseEvent) => {
     scrollToTop()
     emit('click', event)
   }
 
-  useEventListener(container, 'scroll', handleScrollThrottled)
+  useEventListener(container, 'scroll', useThrottleFn(handleScroll, 300))
   onMounted(() => {
     container.value = document
     el.value = document.documentElement
