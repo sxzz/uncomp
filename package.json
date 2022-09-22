@@ -1,0 +1,21 @@
+{
+  "name": "uncomp-monorepo",
+  "version": "0.0.0",
+  "description": "Universal component library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  },
+  "devDependencies": {
+    "vue": "^3.2.39"
+  },
+  "dependencies": {
+    "@vueuse/core": "^9.2.0"
+  }
+}
